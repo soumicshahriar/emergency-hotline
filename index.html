@@ -53,7 +53,8 @@
         <div class="navbar-end hidden lg:flex ">
             <div class="menu menu-horizontal px-1 space-x-5">
                 <div class="flex space-x-1 items-center bg-[#41ff6b1a] rounded-[50px] px-6 py-2">
-                    <span class="font-bold mr-2">0</span><img class="w-[30px] h-[30px]" src="./assets/heart.png" alt="">
+                    <span id="heart-token" class="font-bold mr-2">0</span><img class="w-[30px] h-[30px]"
+                        src="./assets/heart.png" alt="">
                 </div>
                 <div class="flex space-x-1 items-center bg-[#41ff6b1a] rounded-[50px] px-6 py-2">
                     <span class="font-bold mr-2">100</span><img class="w-[30px] h-[30px]" src="./assets/coin.png"
@@ -92,7 +93,9 @@
                         <div class="flex justify-between items-center">
                             <div class="w-[60px] h-[60px] bg-[#FFE3E2] rounded-lg p-2"><img src="./assets/emergency.png"
                                     alt=""></div>
-                            <i class="fa-regular fa-heart text-3xl"></i>
+                            <i
+                                class="fa-regular fa-heart text-3xl cursor-pointer hover:text-red-500 hover:scale-110 transition-transform duration-200"></i>
+
 
                         </div>
                         <h2 class="font-bold">National Emergency Number</h2>
@@ -122,7 +125,8 @@
                         <div class="flex justify-between items-center">
                             <div class="w-[60px] h-[60px] bg-[#FFE3E2] rounded-lg p-2"><img
                                     src="./assets/police.png        " alt=""></div>
-                            <i class="fa-regular fa-heart text-3xl"></i>
+                            <i
+                                class="fa-regular fa-heart text-3xl cursor-pointer hover:text-red-500 hover:scale-110 transition-transform duration-200"></i>
 
                         </div>
                         <h2 class="font-bold">Police Helpline Number</h2>
@@ -152,7 +156,8 @@
                         <div class="flex justify-between items-center">
                             <div class="w-[60px] h-[60px] bg-[#FFE3E2] rounded-lg p-2"><img
                                     src="./assets/fire-service.png" alt=""></div>
-                            <i class="fa-regular fa-heart text-3xl"></i>
+                            <i
+                                class="fa-regular fa-heart text-3xl cursor-pointer hover:text-red-500 hover:scale-110 transition-transform duration-200"></i>
 
                         </div>
                         <h2 class="font-bold">Fire Service Number</h2>
@@ -182,7 +187,8 @@
                         <div class="flex justify-between items-center">
                             <div class="w-[60px] h-[60px] bg-[#FFE3E2] rounded-lg p-2"><img src="./assets/ambulance.png"
                                     alt=""></div>
-                            <i class="fa-regular fa-heart text-3xl"></i>
+                            <i
+                                class="fa-regular fa-heart text-3xl cursor-pointer hover:text-red-500 hover:scale-110 transition-transform duration-200"></i>
 
                         </div>
                         <h2 class="font-bold">Ambulance Service</h2>
@@ -212,7 +218,8 @@
                         <div class="flex justify-between items-center">
                             <div class="w-[60px] h-[60px] bg-[#FFE3E2] rounded-lg p-2"><img src="./assets/emergency.png"
                                     alt=""></div>
-                            <i class="fa-regular fa-heart text-3xl"></i>
+                            <i
+                                class="fa-regular fa-heart text-3xl cursor-pointer hover:text-red-500 hover:scale-110 transition-transform duration-200"></i>
 
                         </div>
                         <h2 class="font-bold">Women & Child Helpline</h2>
@@ -242,7 +249,8 @@
                         <div class="flex justify-between items-center">
                             <div class="w-[60px] h-[60px] bg-[#FFE3E2] rounded-lg p-2"><img src="./assets/emergency.png"
                                     alt=""></div>
-                            <i class="fa-regular fa-heart text-3xl"></i>
+                            <i
+                                class="fa-regular fa-heart text-3xl cursor-pointer hover:text-red-500 hover:scale-110 transition-transform duration-200"></i>
 
                         </div>
                         <h2 class="font-bold">Anti-Corruption Helpline</h2>
@@ -272,7 +280,8 @@
                         <div class="flex justify-between items-center">
                             <div class="w-[60px] h-[60px] bg-[#FFE3E2] rounded-lg p-2"><img src="./assets/emergency.png"
                                     alt=""></div>
-                            <i class="fa-regular fa-heart text-3xl"></i>
+                            <i
+                                class="fa-regular fa-heart text-3xl cursor-pointer hover:text-red-500 hover:scale-110 transition-transform duration-200"></i>
 
                         </div>
                         <h2 class="font-bold">Electricity Helpline</h2>
@@ -302,7 +311,8 @@
                         <div class="flex justify-between items-center">
                             <div class="w-[60px] h-[60px] bg-[#FFE3E2] rounded-lg p-2"><img src="./assets/emergency.png"
                                     alt=""></div>
-                            <i class="fa-regular fa-heart text-3xl"></i>
+                            <i
+                                class="fa-regular fa-heart text-3xl cursor-pointer hover:text-red-500 hover:scale-110 transition-transform duration-200"></i>
 
                         </div>
                         <h2 class="font-bold">Brac Helpline</h2>
@@ -332,7 +342,8 @@
                         <div class="flex justify-between items-center">
                             <div class="w-[60px] h-[60px] bg-[#FFE3E2] rounded-lg p-2"><img src="./assets/emergency.png"
                                     alt=""></div>
-                            <i class="fa-regular fa-heart text-3xl"></i>
+                            <i
+                                class="fa-regular fa-heart text-3xl cursor-pointer hover:text-red-500 hover:scale-110 transition-transform duration-200"></i>
 
                         </div>
                         <h2 class="font-bold">Bangladesh Railway Helpline </h2>
@@ -429,6 +440,24 @@
         clearBtn.addEventListener('click', () => {
             historyEntries.innerHTML = "";
         })
+
+
+
+        // for heart
+        const heartButton = document.querySelectorAll('.fa-heart');
+        const heartTokenSection = document.getElementById('heart-token');
+        let heartToken = parseInt(heartTokenSection.innerText);
+
+        for (const heart of heartButton) {
+            heart.addEventListener('click', () => {
+                heartToken += 1;
+                heartTokenSection.innerText = heartToken;
+
+            })
+
+
+        }
+
 
 
     </script>
