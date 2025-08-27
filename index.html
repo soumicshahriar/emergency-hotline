@@ -57,8 +57,8 @@
                         src="./assets/heart.png" alt="">
                 </div>
                 <div class="flex space-x-1 items-center bg-[#41ff6b1a] rounded-[50px] px-6 py-2">
-                    <span class="font-bold mr-2">100</span><img class="w-[30px] h-[30px]" src="./assets/coin.png"
-                        alt="">
+                    <span id="call-token" class="font-bold mr-2">100</span><img class="w-[30px] h-[30px]"
+                        src="./assets/coin.png" alt="">
                 </div>
                 <div class="flex space-x-1 items-center bg-[#00a63e] rounded-[50px]  px-6 py-2 text-white">
                     <span class="font-bold mr-2">2</span> Copy
@@ -400,6 +400,16 @@
             const callButton = event.target.closest(".call-btn")
             if (!callButton) return;
             console.log(callButton)
+            const callTokenSection = document.getElementById('call-token');
+            let callToken = parseInt(callTokenSection.innerText);
+            if (callButton) {
+
+                if (callToken < 20) {
+                    return alert('You have not sufficient call Token')
+                }
+                callToken -= 20;
+                callTokenSection.innerText = callToken;
+            }
 
 
             const card = callButton.closest("#card")
@@ -414,7 +424,7 @@
             const time = now.toLocaleTimeString('en-US', { hour12: true });
             console.log(time);
 
-
+            alert(`You have called the service: ${title} (${number})`)
 
 
 
