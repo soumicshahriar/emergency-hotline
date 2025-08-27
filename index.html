@@ -22,8 +22,8 @@
 <body>
     <!-- navbar start-->
 
-    <div class="navbar bg-base-100 px-8">
-        <div class="navbar-start">
+    <div class="navbar bg-base-100 md:px-8">
+        <div class="flex justify-between w-full lg:justify-start">
             <div class="dropdown">
                 <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
@@ -34,14 +34,16 @@
                 </div>
                 <ul tabindex="0"
                     class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow space-y-5">
-                    <div class="flex space-x-1 items-center bg-[#41ff6b1a] rounded-lg p-[12px]">
-                        <span class="font-bold">0</span><img class="w-[30px] h-[30px]" src="./assets/heart.png" alt="">
+                    <div class="flex space-x-1 items-center bg-[#41ff6b1a] rounded-[50px] px-6 py-2">
+                        <span id="heart-token" class="font-bold mr-2">0</span><img class="w-[30px] h-[30px]"
+                            src="./assets/heart.png" alt="">
                     </div>
-                    <div class="flex space-x-1 items-center bg-[#41ff6b1a] rounded-lg p-[12px]">
-                        <span class="font-bold">0</span><img class="w-[30px] h-[30px]" src="./assets/heart.png" alt="">
+                    <div class="flex space-x-1 items-center bg-[#41ff6b1a] rounded-[50px] px-6 py-2">
+                        <span id="call-token" class="font-bold mr-2">100</span><img class="w-[30px] h-[30px]"
+                            src="./assets/coin.png" alt="">
                     </div>
-                    <div class="flex space-x-1 items-center bg-[#41ff6b1a] rounded-lg p-[12px]">
-                        <span class="font-bold">0</span><img class="w-[30px] h-[30px]" src="./assets/heart.png" alt="">
+                    <div class="flex space-x-1 items-center bg-[#00a63e] rounded-[50px]  px-6 py-2 text-white">
+                        <span id="copy-token" class="font-bold mr-2">2</span> Copy
                     </div>
                 </ul>
             </div>
@@ -61,7 +63,7 @@
                         src="./assets/coin.png" alt="">
                 </div>
                 <div class="flex space-x-1 items-center bg-[#00a63e] rounded-[50px]  px-6 py-2 text-white">
-                    <span class="font-bold mr-2">2</span> Copy
+                    <span id="copy-token" class="font-bold mr-2">2</span> Copy
                 </div>
 
             </div>
@@ -83,10 +85,10 @@
 
     <!-- main section -->
     <main class="bg-[#f5fff6]">
-        <div class="flex gap-5 py-10 container mx-auto">
+        <div class="lg:flex gap-5 py-10 container mx-auto">
             <!-- card section -->
 
-            <div class="cards-container w-9/12 grid grid-cols-3 gap-2">
+            <div class="cards-container lg:w-9/12 grid grid-cols-2 lg:grid-cols-3 gap-2">
                 <!-- card -->
                 <div id="card" class="p-4 space-y-4 bg-white rounded-xl">
                     <div class="space-y-1">
@@ -110,9 +112,12 @@
                     </div>
 
                     <div class="flex justify-between gap-2">
-                        <button class="btn border-1 bg-white w-1/2 rounded-[8px]"><i class="fa-regular fa-copy "></i>
+                        <button
+                            class="btn border-1 bg-white w-1/2 rounded-[8px] hover:scale-110 hover:shadow-lg transition-transform duration-200"><i
+                                class="fa-regular fa-copy "></i>
                             Copy</button>
-                        <button class="btn border-1 bg-[#00A63E] text-white w-1/2 rounded-[8px] call-btn "><i
+                        <button
+                            class="btn border-1 bg-[#00A63E] text-white w-1/2 rounded-[8px] call-btn hover:scale-110 hover:shadow-lg transition-transform duration-200"><i
                                 class="fa-solid fa-phone"></i>
                             Call</button>
                     </div>
@@ -141,9 +146,12 @@
                     </div>
 
                     <div class="flex justify-between gap-2">
-                        <button class="btn border-1 bg-white w-1/2 rounded-[8px]"><i class="fa-regular fa-copy "></i>
+                        <button
+                            class="btn border-1 bg-white w-1/2 rounded-[8px] hover:scale-110 hover:shadow-lg transition-transform duration-200"><i
+                                class="fa-regular fa-copy "></i>
                             Copy</button>
-                        <button class="btn border-1 bg-[#00A63E] text-white w-1/2 rounded-[8px] call-btn "><i
+                        <button
+                            class="btn border-1 bg-[#00A63E] text-white w-1/2 rounded-[8px] call-btn hover:scale-110 hover:shadow-lg transition-transform duration-200"><i
                                 class="fa-solid fa-phone"></i>
                             Call</button>
                     </div>
@@ -172,9 +180,12 @@
                     </div>
 
                     <div class="flex justify-between gap-2">
-                        <button class="btn border-1 bg-white w-1/2 rounded-[8px]"><i class="fa-regular fa-copy "></i>
+                        <button
+                            class="btn border-1 bg-white w-1/2 rounded-[8px] hover:scale-110 hover:shadow-lg transition-transform duration-200"><i
+                                class="fa-regular fa-copy "></i>
                             Copy</button>
-                        <button class="btn border-1 bg-[#00A63E] text-white w-1/2 rounded-[8px] call-btn "><i
+                        <button
+                            class="btn border-1 bg-[#00A63E] text-white w-1/2 rounded-[8px] call-btn hover:scale-110 hover:shadow-lg transition-transform duration-200"><i
                                 class="fa-solid fa-phone"></i>
                             Call</button>
                     </div>
@@ -203,9 +214,12 @@
                     </div>
 
                     <div class="flex justify-between gap-2">
-                        <button class="btn border-1 bg-white w-1/2 rounded-[8px]"><i class="fa-regular fa-copy "></i>
+                        <button
+                            class="btn border-1 bg-white w-1/2 rounded-[8px] hover:scale-110 hover:shadow-lg transition-transform duration-200"><i
+                                class="fa-regular fa-copy "></i>
                             Copy</button>
-                        <button class="btn border-1 bg-[#00A63E] text-white w-1/2 rounded-[8px] call-btn "><i
+                        <button
+                            class="btn border-1 bg-[#00A63E] text-white w-1/2 rounded-[8px] call-btn hover:scale-110 hover:shadow-lg transition-transform duration-200"><i
                                 class="fa-solid fa-phone"></i>
                             Call</button>
                     </div>
@@ -234,9 +248,12 @@
                     </div>
 
                     <div class="flex justify-between gap-2">
-                        <button class="btn border-1 bg-white w-1/2 rounded-[8px]"><i class="fa-regular fa-copy "></i>
+                        <button
+                            class="btn border-1 bg-white w-1/2 rounded-[8px] hover:scale-110 hover:shadow-lg transition-transform duration-200"><i
+                                class="fa-regular fa-copy "></i>
                             Copy</button>
-                        <button class="btn border-1 bg-[#00A63E] text-white w-1/2 rounded-[8px] call-btn "><i
+                        <button
+                            class="btn border-1 bg-[#00A63E] text-white w-1/2 rounded-[8px] call-btn hover:scale-110 hover:shadow-lg transition-transform duration-200"><i
                                 class="fa-solid fa-phone"></i>
                             Call</button>
                     </div>
@@ -265,9 +282,12 @@
                     </div>
 
                     <div class="flex justify-between gap-2">
-                        <button class="btn border-1 bg-white w-1/2 rounded-[8px]"><i class="fa-regular fa-copy "></i>
+                        <button
+                            class="btn border-1 bg-white w-1/2 rounded-[8px] hover:scale-110 hover:shadow-lg transition-transform duration-200"><i
+                                class="fa-regular fa-copy "></i>
                             Copy</button>
-                        <button class="btn border-1 bg-[#00A63E] text-white w-1/2 rounded-[8px] call-btn "><i
+                        <button
+                            class="btn border-1 bg-[#00A63E] text-white w-1/2 rounded-[8px] call-btn hover:scale-110 hover:shadow-lg transition-transform duration-200"><i
                                 class="fa-solid fa-phone"></i>
                             Call</button>
                     </div>
@@ -296,9 +316,12 @@
                     </div>
 
                     <div class="flex justify-between gap-2">
-                        <button class="btn border-1 bg-white w-1/2 rounded-[8px]"><i class="fa-regular fa-copy "></i>
+                        <button
+                            class="btn border-1 bg-white w-1/2 rounded-[8px] hover:scale-110 hover:shadow-lg transition-transform duration-200"><i
+                                class="fa-regular fa-copy "></i>
                             Copy</button>
-                        <button class="btn border-1 bg-[#00A63E] text-white w-1/2 rounded-[8px] call-btn "><i
+                        <button
+                            class="btn border-1 bg-[#00A63E] text-white w-1/2 rounded-[8px] call-btn hover:scale-110 hover:shadow-lg transition-transform duration-200"><i
                                 class="fa-solid fa-phone"></i>
                             Call</button>
                     </div>
@@ -327,9 +350,12 @@
                     </div>
 
                     <div class="flex justify-between gap-2">
-                        <button class="btn border-1 bg-white w-1/2 rounded-[8px]"><i class="fa-regular fa-copy "></i>
+                        <button
+                            class="btn border-1 bg-white w-1/2 rounded-[8px] hover:scale-110 hover:shadow-lg transition-transform duration-200"><i
+                                class="fa-regular fa-copy "></i>
                             Copy</button>
-                        <button class="btn border-1 bg-[#00A63E] text-white w-1/2 rounded-[8px] call-btn "><i
+                        <button
+                            class="btn border-1 bg-[#00A63E] text-white w-1/2 rounded-[8px] call-btn hover:scale-110 hover:shadow-lg transition-transform duration-200"><i
                                 class="fa-solid fa-phone"></i>
                             Call</button>
                     </div>
@@ -358,9 +384,12 @@
                     </div>
 
                     <div class="flex justify-between gap-2">
-                        <button class="btn border-1 bg-white w-1/2 rounded-[8px]"><i class="fa-regular fa-copy "></i>
+                        <button
+                            class="btn border-1 bg-white w-1/2 rounded-[8px] hover:scale-110 hover:shadow-lg transition-transform duration-200"><i
+                                class="fa-regular fa-copy "></i>
                             Copy</button>
-                        <button class="btn border-1 bg-[#00A63E] text-white w-1/2 rounded-[8px] call-btn "><i
+                        <button
+                            class="btn border-1 bg-[#00A63E] text-white w-1/2 rounded-[8px] call-btn hover:scale-110 hover:shadow-lg transition-transform duration-200"><i
                                 class="fa-solid fa-phone"></i>
                             Call</button>
                     </div>
@@ -371,10 +400,11 @@
 
 
             <!-- history section -->
-            <div id="historyButton" class="history w-3/12 bg-white rounded-lg py-2 px-2">
+            <div id="historyButton" class="history lg:w-3/12 bg-white rounded-lg py-2 px-2">
                 <div class="flex justify-between items-center">
                     <p><i class="fa-regular fa-clock"></i> <span class="font-bold">Call History</span></p>
-                    <button id="clear-btn" class="text-white bg-[#00A63E] rounded-[50px] px-9 py-3">Clear</button>
+                    <button id="clear-btn"
+                        class="text-white bg-[#00A63E] rounded-[50px] px-9 py-3 hover:bg-green-500 hover:cursor-pointer">Clear</button>
                 </div>
 
             </div>
@@ -405,7 +435,8 @@
             if (callButton) {
 
                 if (callToken < 20) {
-                    return alert('You have not sufficient call Token')
+                    return alert("❌ You don't have sufficient call Tokens. For each call you need at least 20 tokens.");
+
                 }
                 callToken -= 20;
                 callTokenSection.innerText = callToken;
@@ -424,7 +455,7 @@
             const time = now.toLocaleTimeString('en-US', { hour12: true });
             console.log(time);
 
-            alert(`You have called the service: ${title} (${number})`)
+            alert(`📞 calling ${title} (${number})`);
 
 
 
@@ -468,6 +499,32 @@
 
         }
 
+
+
+        // for copy button
+        const copyButtons = document.querySelectorAll('.fa-copy');
+        console.log(copyButtons)
+        const copyTokenSection = document.getElementById('copy-token');
+        let copyToken = parseInt(copyTokenSection.innerText);
+        console.log(copyToken)
+        for (const button of copyButtons) {
+            button.parentElement.addEventListener('click', () => {
+                const card = button.closest('#card');
+                const number = card.querySelector('h3').innerText.trim();
+                console.log(number)
+
+                // copy to clipboard
+                navigator.clipboard.writeText(number).then(() => {
+                    alert(`Copied: ${number}`)
+                    copyToken += 1;
+                    copyTokenSection.innerText = copyToken;
+
+
+                })
+            })
+
+
+        }
 
 
     </script>
