@@ -35,15 +35,15 @@
                 <ul tabindex="0"
                     class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow space-y-5">
                     <div class="flex space-x-1 items-center bg-[#41ff6b1a] rounded-[50px] px-6 py-2">
-                        <span id="heart-token" class="font-bold mr-2">0</span><img class="w-[30px] h-[30px]"
+                        <span class="font-bold mr-2 heart-token">0</span><img class="w-[30px] h-[30px]"
                             src="./assets/heart.png" alt="">
                     </div>
                     <div class="flex space-x-1 items-center bg-[#41ff6b1a] rounded-[50px] px-6 py-2">
-                        <span id="call-token" class="font-bold mr-2">100</span><img class="w-[30px] h-[30px]"
+                        <span class="font-bold mr-2 call-token">100</span><img class="w-[30px] h-[30px]"
                             src="./assets/coin.png" alt="">
                     </div>
                     <div class="flex space-x-1 items-center bg-[#00a63e] rounded-[50px]  px-6 py-2 text-white">
-                        <span id="copy-token" class="font-bold mr-2">2</span> Copy
+                        <span class="font-bold mr-2 copy-token">2</span> Copy
                     </div>
                 </ul>
             </div>
@@ -55,15 +55,15 @@
         <div class="navbar-end hidden lg:flex ">
             <div class="menu menu-horizontal px-1 space-x-5">
                 <div class="flex space-x-1 items-center bg-[#41ff6b1a] rounded-[50px] px-6 py-2">
-                    <span id="heart-token" class="font-bold mr-2">0</span><img class="w-[30px] h-[30px]"
+                    <span class="font-bold mr-2 heart-token">0</span><img class="w-[30px] h-[30px]"
                         src="./assets/heart.png" alt="">
                 </div>
                 <div class="flex space-x-1 items-center bg-[#41ff6b1a] rounded-[50px] px-6 py-2">
-                    <span id="call-token" class="font-bold mr-2">100</span><img class="w-[30px] h-[30px]"
+                    <span class="font-bold mr-2 call-token">100</span><img class="w-[30px] h-[30px]"
                         src="./assets/coin.png" alt="">
                 </div>
                 <div class="flex space-x-1 items-center bg-[#00a63e] rounded-[50px]  px-6 py-2 text-white">
-                    <span id="copy-token" class="font-bold mr-2">2</span> Copy
+                    <span class="font-bold mr-2 copy-token">2</span> Copy
                 </div>
 
             </div>
@@ -75,8 +75,9 @@
     <div
         class="bg-gradient-to-r from-[#013223] via-[#006747] to-[#013223] w-full h-[240px] text-white flex flex-col justify-center items-center space-y-5">
         <div class="w-[92px] h-[92px] "><img src="./assets/logo-dark.png" alt=""></div>
-        <p class="font-bold">Emergency Service Directory</p>
-        <span class="text-wrap text-sm">Government Emergency Services at Your Fingertip – A Project by Government of the
+        <p class="font-bold text-center">Emergency Service Directory</p>
+        <span class="text-wrap text-sm text-center">Government Emergency Services at Your Fingertip – A Project by
+            Government of the
             People’s Republic of
             Bangladesh</span>
 
@@ -84,7 +85,7 @@
 
 
     <!-- main section -->
-    <main class="bg-[#f5fff6]">
+    <section class="bg-[#f5fff6]">
         <div class="lg:flex gap-5 py-10 container mx-auto">
             <!-- card section -->
 
@@ -409,128 +410,10 @@
 
             </div>
         </div>
-    </main>
+    </section>
 
 
-    <script>
-        const cardContainer = document.querySelector(".cards-container");
-        console.log(cardContainer);
-
-        const historySection = document.getElementById('historyButton')
-        console.log(historySection)
-
-
-
-        const historyEntries = document.createElement('div');
-        // historyEntries.id = 'historyEntries';
-        historySection.appendChild(historyEntries);
-
-
-        cardContainer.addEventListener('click', (event) => {
-            const callButton = event.target.closest(".call-btn")
-            if (!callButton) return;
-            console.log(callButton)
-            const callTokenSection = document.getElementById('call-token');
-            let callToken = parseInt(callTokenSection.innerText);
-            if (callButton) {
-
-                if (callToken < 20) {
-                    return alert("❌ You don't have sufficient call Tokens. For each call you need at least 20 tokens.");
-
-                }
-                callToken -= 20;
-                callTokenSection.innerText = callToken;
-            }
-
-
-            const card = callButton.closest("#card")
-            if (!card) return;
-
-            const title = card.querySelector("h2")?.textContent.trim() || 'Unknown';
-            console.log(title)
-            const number = card.querySelector("h3")?.textContent.trim() || 'N/A'
-
-            const now = new Date();
-            console.log(now)
-            const time = now.toLocaleTimeString('en-US', { hour12: true });
-            console.log(time);
-
-            alert(`📞 calling ${title} (${number})`);
-
-
-
-            const entryData = document.createElement("div");
-            entryData.className = "flex justify-between items-center bg-[#FAFAFA] rounded-lg p-2 mt-2"
-            entryData.innerHTML = `
-            <div class="flex flex-col">
-                <span class="font-semibold">${title}</span>
-                <span class="opacity-80">${number}</span>
-            </div>
-            <small class="opacity-70 text-sm">${time}</small>
-            
-            `
-
-            historyEntries.appendChild(entryData)
-
-        })
-
-
-        // handle clear button
-
-        const clearBtn = document.getElementById("clear-btn");
-        clearBtn.addEventListener('click', () => {
-            historyEntries.innerHTML = "";
-        })
-
-
-
-        // for heart
-        const heartButton = document.querySelectorAll('.fa-heart');
-        const heartTokenSection = document.getElementById('heart-token');
-        let heartToken = parseInt(heartTokenSection.innerText);
-
-        for (const heart of heartButton) {
-            heart.addEventListener('click', () => {
-                heartToken += 1;
-                heartTokenSection.innerText = heartToken;
-
-            })
-
-
-        }
-
-
-
-        // for copy button
-        const copyButtons = document.querySelectorAll('.fa-copy');
-        console.log(copyButtons)
-        const copyTokenSection = document.getElementById('copy-token');
-        let copyToken = parseInt(copyTokenSection.innerText);
-        console.log(copyToken)
-        for (const button of copyButtons) {
-            button.parentElement.addEventListener('click', () => {
-                const card = button.closest('#card');
-                const number = card.querySelector('h3').innerText.trim();
-                console.log(number)
-
-                // copy to clipboard
-                navigator.clipboard.writeText(number).then(() => {
-                    alert(`Copied: ${number}`)
-                    copyToken += 1;
-                    copyTokenSection.innerText = copyToken;
-
-
-                })
-            })
-
-
-        }
-
-
-    </script>
-
-
-
+    <script src="script.js"></script>
 </body>
 
 </html>
